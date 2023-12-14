@@ -156,7 +156,7 @@
 
 
     function UserHasOpenedWebApp(url) {
-        let urlWithUserID = url + '?user_id' + encodeURIComponent(userId)
+        let urlWithUserID = url + '?user_id=' + encodeURIComponent(userId)
 
         fetch(urlWithUserID, {
             method: 'GET',
