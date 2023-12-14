@@ -152,19 +152,26 @@
     userId = tg.initDataUnsafe.user.id;
 
     function UserHasOpenedWebApp(url) {
-        let urlWithUserID = url + '?user_id=' + encodeURIComponent(userId);
 
-        fetch(urlWithUserID, {
-            method: 'GET',
+        let endpoint = url + '/analyze'
+        let data = {
+            user_id: userId
+        }
+
+        fetch(endpoint, {
+            method: 'POST',
             headers: headers,
+            body: JSON.stringify(data)
         })
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
             console.log("Data has been sent!");
+            tg.close();
         })
         .catch((error) => {
             console.error('Error:', error);
+            tg.close()
         });
     }
 
