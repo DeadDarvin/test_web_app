@@ -152,26 +152,21 @@
     tg.expand();
     userId = tg.initDataUnsafe.user.id;
 
-    UserHasOpenedWebApp(url)
+    let urlWithUserId = url + '?user_id=' + encodeURIComponent(userId)
 
+    fetch(urlWithUserId, {
+        method: 'GET',
+        headers: headers,
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            console.log("Data has been sent!");
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 
-    function UserHasOpenedWebApp(url) {
-        let urlWithUserID = url + '?user_id=' + encodeURIComponent(userId)
-
-        fetch(urlWithUserID, {
-            method: 'GET',
-            headers: headers,
-          })
-            .then(response => response.json())
-            .then(data => {
-              console.log('Success:', data);
-              console.log("Data has been sent!");
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-            });
-
-    }
 
     function handleCharacterClick(character) {
 
