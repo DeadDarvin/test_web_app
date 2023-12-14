@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram WebApps API</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        /* Общий стиль страницы HTML */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--tg-theme-bg-color);
+        }
+
+        @font-face {
+            font-family: 'SF Pro'; /* Название шрифта */
+            src: url('fonts/SFProText-Semibold.ttf') format('truetype'); /* Укажите правильный путь к вашему файлу шрифта и формат */
+            /* Добавьте другие форматы, если у вас есть файлы других форматов (например, .woff2) */
+        }
+
+        /* Стиль контейнера */
+        .container {
+            display: flex;
+            flex-direction: row; /* Изменяем направление на горизонтальное */
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+        }
+
+        /* Стиль иконки персонажа */
+        .character-icon {
+            width: 150px;
+            height: 123px;
+            margin-top: 25px;
+            margin-left: 8px;
+            margin-right: 8px;
+            padding-top: 14%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: 0px 15px 15px #00000018;
+            border: 2px solid #27A7E7;
+            border-radius: 18px;
+            opacity: 1;
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+            cursor: pointer; /* Добавляем указатель при наведении для обозначения кликабельности */
+        }
+
+        /* Стиль текста персонажа */
+        .character-text {
+            text-align: center;
+            font-family: 'SF Pro', sans-serif; /* Используем шрифт 'SF Pro', и если его нет, используем sans-serif */
+            font-weight: bold;
+            font-size: 20px; /* Можно задать размер шрифта напрямую, так как мы подключили шрифт 'SF Pro' */
+            line-height: 20px; /* Задаем высоту строки, если нужно */
+            letter-spacing: 0px;
+            color: #27A7E7;
+            text-shadow: 0px 5px 5px #00000008;
+            opacity: 1;
+            white-space: nowrap;
+            max-width: 100%; /* Максимальная ширина текста */
+            height: auto; /* Высота автоматически подстраивается под содержимое */
+            background: transparent; /* Убираем фон */
+            border: none; /* Убираем рамку */
+            padding: 0; /* Убираем отступы внутри элемента */
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* fill blue when user click on person-icon */
+        .pair-container:active {
+            background-color: #7CB9E8;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+         <div class="pair-container">
+            <div class="character-icon" style="background-image: url('img/male/mario.png');" onclick="handleCharacterClick('memes');"></div>
+            <div class="character-text">Мемы</div>
+        </div>
+        <div class="pair-container">
+            <div class="character-icon" style="background-image: url('img/male/spy.png');" onclick="handleCharacterClick('spy');"></div>
+            <div class="character-text">Шпион</div>
+        </div>
+        <div class="pair-container">
+            <div class="character-icon" style="background-image: url('img/male/pirate.png');" onclick="handleCharacterClick('pirate');"></div>
+            <div class="character-text">Пират</div>
+        </div>
+        <div class="pair-container">
+            <div class="character-icon" style="background-image: url('img/male/chef.png');" onclick="handleCharacterClick('chief');"></div>
+            <div class="character-text">Шеф</div>
+        </div>
+        <div class="pair-container">
+            <div class="character-icon" style="background-image: url('img/male/cosmonaut.png');" onclick="handleCharacterClick('spaceman');"></div>
+            <div class="character-text">Космонавт</div>
+        </div>
+        <div class="pair-container">
+            <div class="character-icon" style="background-image: url('img/male/boxer.png');" onclick="handleCharacterClick('boxer');"></div>
+            <div class="character-text">Боксер</div>
+        </div>
+        <div class="pair-container">
+            <div class="character-icon" style="background-image: url('img/male/sheriff.png');" onclick="handleCharacterClick('sheriff');"></div>
+            <div class="character-text">Шериф</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/male/king.png');" onclick="handleCharacterClick('king');"></div>
+             <div class="character-text">Король</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/male/egypt.png');" onclick="handleCharacterClick('ancient_egypt');"></div>
+             <div class="character-text">Египет</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/male/hacker.png');" onclick="handleCharacterClick('hacker');"></div>
+             <div class="character-text">Хакер</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/male/racer.png');" onclick="handleCharacterClick('racer');"></div>
+             <div class="character-text">Гонщик</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/male/mafia_boss.png');" onclick="handleCharacterClick('mafia_boss');"></div>
+             <div class="character-text">Босс Мафии</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/male/footballer.png');" onclick="handleCharacterClick('footballer');"></div>
+             <div class="character-text">Футболист</div>
+        </div>
+    </div>
+</body>
+<script>
+    let userId;
+    let tg = window.Telegram.WebApp;
+
+    const url = "https://c985-91-105-181-137.ngrok-free.app";
+
+    const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': tg.initDataUnsafe.hash,
+    'Init-Data': tg.initData
+    };
+
+    tg.expand();
+    userId = tg.initDataUnsafe.user.id;
+
+    function handleCharacterClick(character) {
+
+        let data = {
+            user_id: userId,
+            person_name: character
+        }
+
+        fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data)
+          })
+            .then(response => response.json())
+            .then(data => {
+              console.log('Success:', data);
+              console.log("Data has been sent!");
+              tg.close();
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+              tg.close()
+            });
+    }
+</script>
+</html>
