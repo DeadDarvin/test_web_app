@@ -26,7 +26,6 @@
         .container {
             display: flex;
             flex-direction: row; /* Изменяем направление на горизонтальное */
-            align-items: center;
             justify-content: center;
             min-height: 100vh;
             flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
@@ -63,14 +62,15 @@
             color: #27A7E7;
             text-shadow: 0px 5px 5px #00000008;
             opacity: 1;
-            white-space: nowrap;
-            max-width: 100%; /* Максимальная ширина текста */
             height: auto; /* Высота автоматически подстраивается под содержимое */
             background: transparent; /* Убираем фон */
             border: none; /* Убираем рамку */
             padding: 0; /* Убираем отступы внутри элемента */
             margin-top: 10px;
             margin-bottom: 25px;
+            max-width: 150px;
+            margin-left: 8px;
+            margin-right: 8px;
         }
 
         /* fill blue when user click on person-icon */
@@ -84,56 +84,84 @@
 <body>
     <div class="container">
          <div class="pair-container">
-            <div class="character-icon" style="background-image: url('img/male/mario.png');" onclick="handleCharacterClick('memes');"></div>
-            <div class="character-text">Мемы</div>
+            <div class="character-icon" style="background-image: url('img/cyberpunk-2077.gif');" onclick="handleCharacterClick('cyberpunk');"></div>
+            <div class="character-text">Киберпанк 2077</div>
         </div>
         <div class="pair-container">
-            <div class="character-icon" style="background-image: url('img/male/spy.png');" onclick="handleCharacterClick('spy');"></div>
-            <div class="character-text">Шпион</div>
+            <div class="character-icon" style="background-image: url('img/the-lord-of-the-rings.gif');" onclick="handleCharacterClick('lord-rings');"></div>
+            <div class="character-text">Властелин колец</div>
         </div>
         <div class="pair-container">
-            <div class="character-icon" style="background-image: url('img/male/pirate.png');" onclick="handleCharacterClick('pirate');"></div>
-            <div class="character-text">Пират</div>
+            <div class="character-icon" style="background-image: url('img/avatar.gif');" onclick="handleCharacterClick('avatar');"></div>
+            <div class="character-text">Аватар</div>
         </div>
         <div class="pair-container">
-            <div class="character-icon" style="background-image: url('img/male/chef.png');" onclick="handleCharacterClick('chief');"></div>
-            <div class="character-text">Шеф</div>
+            <div class="character-icon" style="background-image: url('img/pharaoh.gif');" onclick="handleCharacterClick('pharaoh');"></div>
+            <div class="character-text">Египетский Фараон</div>
         </div>
         <div class="pair-container">
-            <div class="character-icon" style="background-image: url('img/male/cosmonaut.png');" onclick="handleCharacterClick('spaceman');"></div>
-            <div class="character-text">Космонавт</div>
+            <div class="character-icon" style="background-image: url('img/marvel-comics.gif');" onclick="handleCharacterClick('marvel');"></div>
+            <div class="character-text">Марвел Комиксы</div>
         </div>
         <div class="pair-container">
-            <div class="character-icon" style="background-image: url('img/male/boxer.png');" onclick="handleCharacterClick('boxer');"></div>
-            <div class="character-text">Боксер</div>
+            <div class="character-icon" style="background-image: url('img/inventor.gif');" onclick="handleCharacterClick('inventor');"></div>
+            <div class="character-text">Изобретатель</div>
         </div>
         <div class="pair-container">
-            <div class="character-icon" style="background-image: url('img/male/sheriff.png');" onclick="handleCharacterClick('sheriff');"></div>
-            <div class="character-text">Шериф</div>
+            <div class="character-icon" style="background-image: url('img/astronaut.gif');" onclick="handleCharacterClick('astronaut');"></div>
+            <div class="character-text">Астронавт</div>
         </div>
         <div class="pair-container">
-             <div class="character-icon" style="background-image: url('img/male/king.png');" onclick="handleCharacterClick('king');"></div>
-             <div class="character-text">Король</div>
+            <div class="character-icon" style="background-image: url('img/mythologist.gif');" onclick="handleCharacterClick('mythologist');"></div>
+            <div class="character-text">Мифолог</div>
         </div>
         <div class="pair-container">
-             <div class="character-icon" style="background-image: url('img/male/egypt.png');" onclick="handleCharacterClick('ancient_egypt');"></div>
-             <div class="character-text">Египет</div>
+            <div class="character-icon" style="background-image: url('img/investigator.gif');" onclick="handleCharacterClick('investigator');"></div>
+            <div class="character-text">Исследователь</div>
         </div>
         <div class="pair-container">
-             <div class="character-icon" style="background-image: url('img/male/hacker.png');" onclick="handleCharacterClick('hacker');"></div>
-             <div class="character-text">Хакер</div>
+            <div class="character-icon" style="background-image: url('img/gothic.gif');" onclick="handleCharacterClick('gothic');"></div>
+            <div class="character-text">Готика</div>
         </div>
         <div class="pair-container">
-             <div class="character-icon" style="background-image: url('img/male/racer.png');" onclick="handleCharacterClick('racer');"></div>
-             <div class="character-text">Гонщик</div>
+             <div class="character-icon" style="background-image: url('img/pirate.gif');" onclick="handleCharacterClick('pirate');"></div>
+             <div class="character-text">Пират</div>
         </div>
         <div class="pair-container">
-             <div class="character-icon" style="background-image: url('img/male/mafia_boss.png');" onclick="handleCharacterClick('mafia_boss');"></div>
-             <div class="character-text">Босс Мафии</div>
+             <div class="character-icon" style="background-image: url('img/thug.gif');" onclick="handleCharacterClick('thug');"></div>
+             <div class="character-text">Головорез</div>
         </div>
         <div class="pair-container">
-             <div class="character-icon" style="background-image: url('img/male/footballer.png');" onclick="handleCharacterClick('footballer');"></div>
-             <div class="character-text">Футболист</div>
+             <div class="character-icon" style="background-image: url('img/artist.gif');" onclick="handleCharacterClick('artist');"></div>
+             <div class="character-text">Художник</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/viking.gif');" onclick="handleCharacterClick('viking');"></div>
+             <div class="character-text">Викинг</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/detective.gif');" onclick="handleCharacterClick('detective');"></div>
+             <div class="character-text">Детектив</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/art-deco.gif');" onclick="handleCharacterClick('art-deco');"></div>
+             <div class="character-text">Арт-Деко</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/fantasy-warrior.gif');" onclick="handleCharacterClick('fantasy-warrior');"></div>
+             <div class="character-text">Фэнтези Воин</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/aristocrat.gif');" onclick="handleCharacterClick('aristocrat');"></div>
+             <div class="character-text">Аристократ</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/gladiator.gif');" onclick="handleCharacterClick('gladiator');"></div>
+             <div class="character-text">Гладиатор</div>
+        </div>
+        <div class="pair-container">
+             <div class="character-icon" style="background-image: url('img/rebel.gif');" onclick="handleCharacterClick('rebel');"></div>
+             <div class="character-text">Повстанец</div>
         </div>
     </div>
 </body>
